@@ -1,0 +1,27 @@
+{% extends "main.html" %}
+{% block content %}
+{% include "header.html" %}
+<div class="row top-menu">
+		<div class="col-md-10"></div>
+		<div class="col-md-2 text-right">
+					</div>
+	</div>
+<div class="row banner menu">
+		<div class="col-md-10 col-md-offset-1 padding-none">
+			<figure class="creator">
+				<img src="{{ creator.picture}}">
+				<figcaption>{{ creator.name }}</figcaption>
+			</figure>
+			</h1>
+
+		</div>
+	</div>
+<div class="item-detail">
+{% if item !=[] %}	
+<h1>{{item.name}}</h1>
+<p>{{item.description}}</p>
+{% endif %}
+<a href="{{url_for('editItem',category=category.name,item=item.name)}}">Edit</a>
+<a href="{{url_for('deleteItem',category=category.name,item=item.name)}}">Delete</a>
+</div>
+{% endblock %}
